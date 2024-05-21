@@ -27,5 +27,17 @@ class MathQuiz:
             self.name_entry = Entry(self.main_frame)
             self.name_entry.grid(row=5, column=1)
             self.start_button = Button(self.main_frame, text="Start Quiz", command=self.start_quiz, bg="green", fg="black", activebackground="light green")
-            self.start_button.grid(row=8, column=0, columnspan=2, pady=10)
+            self.start_button.grid(row=8, column=0, columnspan=2, pady=10) 
+        def start_quiz(self):
+                    self.name = self.name_entry.get()
+                    self.name_label.config(text=f"Welcome, {self.name}!")
+                    self.start_button.destroy()
+                    self.display_question()
+                def display_question(self):
+                    self.question_num += 1
+                    if self.question_num > 10:
+                        self.show_result()
+                        return
+                            
+
          
